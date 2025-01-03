@@ -1,0 +1,746 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    scroll-behavior: smooth;
+}
+/* Style de la barre de défilement */
+::-webkit-scrollbar {
+    width: 7px; /* Largeur de la barre de défilement */
+    background-color: #FAF5E0; /* Couleur de fond de la barre */
+}
+
+/* Style de la poignée de défilement (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #583020; /* Couleur de la poignée */
+    border-radius: 2px; /* Bord arrondi */
+}
+
+/* Style de la poignée de défilement au survol */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #583020; /* Couleur plus foncée au survol */
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FAF5E0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 0.1rem 1rem rgba(213, 13, 13, 0.1);
+    height:70px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6b321c;
+}
+
+nav.navbar a {
+    color: #583020;
+    padding: 10px 15px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    border-radius: 60px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #6b321c;
+    color:#FAF5E0;
+}
+
+.logo-container {
+    position:relative;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;    /* Centrer verticalement */
+    padding-left: 20px;          /* Ajouter un peu d'espace autour */
+
+}
+.logo {
+    width: 120px;  /* Largeur du logo */
+    height: auto;  /* Ajuste automatiquement la hauteur pour conserver les proportions */
+}
+header .icons {
+    display: flex; /* Permet aux icônes de s'aligner horizontalement */
+    align-items: center; /* Aligne les icônes verticalement au centre */
+    justify-content: flex-start; /* Place les icônes sur la même ligne */
+}
+
+header .icons a {
+    font-size: 1.5rem;
+    color: #583020;
+    margin-left: 1.5rem;
+    padding: 10px; /* Ajout de l'espace interne pour un effet arrondi équilibré */
+    border-radius: 50%; /* Cercle autour des icônes */
+    background-color: transparent; /* Fond par défaut */
+    display: flex; /* Alignement central de l'icône */
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+header .icons a:hover {
+    background-color: #6b321c;
+    color: #FAF5E0;
+    border-radius: 50px;  
+    transform: scale(1.1); /* Légère animation au survol */
+    
+}
+
+main{
+    padding-top: 70px;
+}
+.Accueil {
+    background-image: url('home.jpg'); /* Chemin de votre image */
+    background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    height: 100vh; /* Définit la hauteur de la section à 100% de la hauteur de l'écran */
+    width: 100%;
+    display: flex; /* Permet d'aligner le contenu à l'intérieur */
+    justify-content: center; /* Aligne horizontalement le contenu au centre */
+    align-items: center; /* Aligne verticalement le contenu au centre */
+    color: #fff; /* Couleur de texte pour contraster avec l'image */
+    text-align: center; /* Centrer le texte */
+}
+
+.Accueil .content button {
+
+    background-color: #8b492f; /* Couleur du bouton */
+    color: #FAF5E0; /* Couleur du texte du bouton */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.content button:hover {
+    background-color: #583020; 
+}
+.checkbtn {
+    font-size: 22px;
+    color: #583020;
+    cursor: pointer;
+    display: none; /* Caché par défaut */
+}
+
+#check {
+    display: none; /* L'entrée checkbox est masquée */
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Lien principal */
+.dropdown > a {
+    padding: 10px 15px;
+    color: #583020;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    border-radius: 60px;
+    transition: 0.3s;
+}
+
+/* Style pour les sous-menus */
+.dropdown-menu {
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 100%; /* Positionné sous le lien principal */
+    left: 0;
+    background-color: #f7ecc0 ; /* Couleur de fond */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Lien dans le menu déroulant */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #FAF5E0;
+    font-size: 14px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+/* Survol des liens du menu */
+.dropdown-menu a:hover {
+    background-color: #583020;
+    color:#FAF5E0;
+}
+
+/* Affiche le menu déroulant au survol */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.content{
+    margin-left:100px;
+}
+.content h2{
+    font-size:40px;
+}
+.content p{
+    color:#FFE6E6;
+    font-size:20px;
+    margin:30px 0;
+    text-shadow:0 0 100px #583020;
+}
+main {
+    width: 100%;
+    height: 100vh; /* Hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .Accueil .content {
+    position: relative; /* Assure que le contenu est au-dessus de la superposition */
+    z-index: 2;
+    text-align: center; /* Centrer le texte */
+    max-width: 600px; /* Limite la largeur pour un design épuré */
+    padding: 20px; /* Espacement intérieur */
+}
+main .Accueil .content h2 {
+    color:#6b321c;
+    font-size: 2.5rem; /* Taille de la police du titre */
+    margin-bottom: 15px; /* Espacement en dessous */
+    text-transform: uppercase; /* Convertir le texte en majuscules */
+    font-weight: bold; /* Gras */
+}
+/* Style du paragraphe */
+main .Accueil .content p {
+    color:#8b492f;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.8rem; /* Taille de la police du paragraphe */
+    margin-bottom: 20px; /* Espacement en dessous */
+    line-height: 1.6; /* Hauteur des lignes pour la lisibilité */
+}
+/*section produits*/
+.produits {
+    padding: 40px 20px;
+    background-color: #f1e6b9;
+    text-align: center;
+}
+
+.section-titre {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #583020;
+    margin-bottom: 20px;
+}
+
+.produits-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.produit {
+    background-color: #FAF5E0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.produit img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.produit h3 {
+    font-size: 1.5rem;
+    color: #583020;
+    margin-bottom: 10px;
+}
+
+.produit p {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color:  #8b492f; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #583020; 
+}
+/* Section Histoire avec un fond original, des ombres et une animation douce */
+.histoire {
+    position: relative;
+    background: linear-gradient(145deg ,  #f7ecc0, #f7ecc0); /* Dégradé unique avec des tons beige et doré */
+    padding: 80px 30px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #3a2e25; /* Couleur foncée pour un contraste élevé */
+    overflow: hidden;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation de l'ombre dynamique pour une touche créative */
+.histoire::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Ombre douce */
+    z-index: -1;
+    animation: shadowAnimation 3s infinite ease-in-out; /* Animation d'ombre dynamique */
+}
+
+@keyframes shadowAnimation {
+    0% { box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.15); }
+    100% { box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1); }
+}
+
+/* Style du titre principal avec effet de texte unique */
+.histoire .section-titre {
+    font-size: 48px;
+    color: #6f4f4f;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.histoire .section-titre::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #6f4f4f, #d1c6b1); /* Ligne sous le titre en dégradé */
+}
+
+/* Texte de la section avec mise en valeur subtile */
+.histoire .texte {
+    max-width: 800px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #4b3b2f;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    background: #fcf5d5; /* Fond semi-transparent pour mettre en avant le texte */
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Ombre douce autour du texte */
+}
+
+/* Citation avec une touche artisanale (police cursive et fond) */
+.histoire .citation {
+    font-style: italic;
+    font-size: 22px;
+    color: #6f4f4f;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(240, 240, 240, 0.9); /* Fond doux et léger */
+    border-left: 5px solid #6f4f4f;
+    font-family: 'Dancing Script', cursive;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Animation subtile pour faire ressortir la citation */
+.histoire .citation:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+/* Citation avec icône de virgule */
+.histoire .citation {
+    font-style: italic;
+    font-size: 22px;
+    color: #6f4f4f;
+    margin-top: 40px;
+    padding: 20px;
+    background: #fcf5d5; /* Fond doux et léger */
+    border-left: 5px solid #6f4f4f;
+    font-family: 'Dancing Script', cursive;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center; /* Centrer la citation */
+}
+
+.histoire .citation i {
+    font-size: 36px; /* Taille de l'icône */
+    color: #583020; /* Couleur dorée pour l'icône */
+    position: absolute;
+    top: -15px;
+}
+
+.histoire .citation i.fa-quote-left {
+    left: -40px; /* Positionner l'icône de la virgule gauche */
+}
+
+.histoire .citation i.fa-quote-right {
+    right: -40px; /* Positionner l'icône de la virgule droite */
+}
+
+/* Effet au survol */
+.histoire .citation:hover {
+    background: #faebad;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+/* Style général pour les images */
+img {
+    width: 50%; /* Rendre l'image responsive */
+    height: auto; /* Maintenir les proportions de l'image */
+    border-radius: 15px; /* Arrondir les coins de l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce sous l'image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'effet au survol */
+    object-fit: cover; /* Adapter l'image à son conteneur tout en conservant les proportions */
+}
+
+/* Effet au survol de l'image */
+img:hover {
+    transform: scale(1.05); /* Agrandir légèrement l'image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Conteneur pour l'image avec un bord élégant */
+.image-container {
+    max-width: 800px; /* Limiter la largeur du conteneur de l'image */
+    margin: 30px auto; /* Centrer l'image horizontalement */
+    overflow: hidden; /* Masquer les parties de l'image qui dépassent */
+    border: 5px solid #d1c6b1; /* Bordure dorée autour de l'image */
+    border-radius: 15px; /* Coins arrondis du conteneur */
+    background-color: #fff; /* Fond blanc pour le conteneur */
+}
+
+/* Pour les images dans des sections spécifiques (par exemple dans l'historique) */
+.histoire img {
+    border-radius: 20px; /* Coins encore plus arrondis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Ombre plus accentuée */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effet au survol des images dans l'histoire */
+.histoire img:hover {
+    transform: scale(1.1); /* Augmenter l'image au survol */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Ombre plus intense */
+}
+
+
+/* Mobile-first responsive */
+@media (max-width: 768px) {
+    .histoire .section-titre {
+        font-size: 32px;
+    }
+
+    .histoire .texte {
+        font-size: 18px;
+    }
+
+    .histoire .citation {
+        font-size: 20px;
+    }
+}
+.info-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #583020;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #f1e6b9;
+  }
+  
+  .info-item i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .icon-lock::before {
+    content: '🔒'; /* Icône de cadenas */
+  }
+  
+  .icon-truck::before {
+    content: '🚚'; /* Icône de camion */
+  }
+  
+  .icon-phone::before {
+    content: '📞'; /* Icône de téléphone */
+  }
+  
+  .info-item strong {
+    color: #f7ecc0;
+  }
+  
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #FAF5E0; /* Fond sombre */
+    color: #6b321c; /* Texte clair */
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 0;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #583020; /* Couleur dorée */
+}
+
+.footer-section p {
+    margin: 8px 0;
+    padding-right:100px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: auto;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #583020;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color:#583020;
+}
+
+.footer-section .social a {
+    color: #583020;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social a:hover {
+    color:#73652d;
+}
+
+footer .social a {
+    color: #583020; /* Beige clair */
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+footer .footer-bottom {
+    background-color: #5c4033;
+    color: #f8f3e7;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+.checkbtn {
+    font-size: 22px;
+    color:#583020;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1050px) {
+    header .logo {
+        font-size: 22px;
+      }
+  
+    nav.navbar a {
+      font-size: 16px;
+    }
+  }
+
+ 
+  /* Responsive media query code for small screen */
+  @media (max-width: 890px) {
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Logo aligné à gauche */
+        padding: 10px;
+        position: relative;
+    }
+    .checkbtn {
+      display: block;
+      position:absolute;
+      right: 20px;
+      top:20px;
+    
+    }
+    .logo {
+        width: 80px; /* Taille réduite pour mobile */
+        height: auto;
+    }
+  
+    nav.navbar{
+      position: fixed;
+      width: 100%;
+      background: #f7ecc0;
+      top: 70px;
+      left: -100%;
+      height: calc(100vh - 70px);
+      transition: left 0.5s ease-in-out;
+      justify-content: center;
+      justify-items: center;
+      gap:20px;
+      display: flex;
+      flex-direction: column;
+      padding-top:80px;
+      z-index: 100;
+    }
+  
+    nav.navbar a {
+      display: block;
+      margin: 10px 0;
+      font-size:15px;
+    }
+
+    #check:checked ~ nav.navbar {
+      left: 0;
+    }
+   
+
+    .dropdown-menu {
+        position: static; /* Position fixe dans le menu hamburger */
+        display: none; /* Masqué par défaut */
+        width: 100%; /* Occupe toute la largeur */
+        background-color:#FAF5E0; /* Fond adapté au menu hamburger */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Affiche le menu au clic ou survol */
+    }
+
+    .dropdown-menu a {
+        text-align: left;
+        padding: 10px 20px;
+    }
+  }
+  @media (max-width: 600px) {
+    nav.navbar {
+        display: none;
+        flex-direction: column;
+        background: #FAF5E0;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+    }
+    #check:checked ~ nav.navbar {
+        display: flex;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
